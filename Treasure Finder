@@ -1,0 +1,93 @@
+Treasure Finder
+--------------------------
+
+Lucy and Tina are close friends. They both are studying in the same school. Now they are on their summer vacation. As they are bored, they ask their parents to take them to an exhibition. There Lucy and Tina play a game. In this game, there are three boxes with some number written on their top. There is a treasure in one of the three boxes and the treasure is present in the box with the second largest number on its top. Also, to open the box, they need to decode the correct code of this box. The clue given to them to find the code is that it is the largest number which divides all the three given numbers. So, now help Lucy and Tina to decode the code.
+
+INPUT FORMAT:
+
+Input consists of three integers. First input corresponds to the number of the first box. Second input corresponds to the number of the second box. Third input corresponds to the number of the third box.
+
+SAMPLE INPUT:
+
+2
+
+4
+
+6
+
+SAMPLE OUTPUT:
+
+The treasure is in the box which has number 4.
+
+The code to open the box is 2.
+
+
+Answer:
+CODE in C++
+--------------------------
+
+#include<iostream>
+
+using namespace std;
+
+int main()
+
+{
+
+int a,b,c,i,m;
+
+cin>>a>>b>>c;
+
+if((a<b && a>c )|| (a<c && a>b)){
+
+m=a;
+
+cout<<"The treasure is in box which has number "<<a<<"\n";
+
+}
+
+if((b<a && b>c)||(b>a && b<c)){
+
+m=b;
+
+cout<<"The treasure is in box which has number "<<b<<"\n";
+
+}
+  
+if((c>a && c<b)||(c<a && c>b)){
+ 
+m=c;
+
+cout<<"The treasure is in box which has number "<<c<<"\n";
+
+}
+
+if(m == a)
+
+i=a;
+
+else if(m == b)
+
+i=b;
+
+else
+
+i=c;
+
+for(i;i<=i;i--)
+
+{
+
+if(a%i == 0 && b%i==0 && c%i==0)
+
+{
+
+break;
+
+}
+
+}
+
+cout<<"The code to open the box is "<<i;
+
+}

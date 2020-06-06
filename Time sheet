@@ -1,0 +1,85 @@
+Time sheet
+------------------------
+
+Jeevitha just started to work as a programming trainer for UIT's Placement Cell. She is paid Rs.100 an hour, with a few exceptions. She earns an extra Rs.15 an hour for any part of a day where she works for more than 8 hours, and an extra Rs.25 an hour for hours beyond 40 in any one week. Also, she earns a 25% bonus for working on Saturdays and a 50% bonus for working on Sundays. The bonuses for Saturday and Sunday are computed based on the hours worked on those days. And there is no bonus for working more than 40 hours in a week. You'll be given the number of hours Jeevitha worked on each day in a week (Sunday, Monday, ..., Saturday), and you need to compute her salary for the week.
+
+INPUT & OUTPUT FORMAT:
+
+Input consists of 7 integers less than or equal to 24 on separate lines
+
+Print Jeevith's salary for a week.
+
+SAMPLE INPUT:
+
+0
+
+8
+
+8
+
+8
+
+10
+
+6
+
+0
+
+SAMPLE OUTPUT:
+
+4030
+
+
+Answer:
+CODE in C++
+--------------------------
+
+#include<iostream>
+
+using namespace std;
+
+int main()
+
+{
+
+int s,m,t,w,th,f,sat,ts,tt;
+
+cin>>s>>m>>t>>w>>th>>f>>sat;
+
+if(s==0)
+
+ts=0;
+
+else
+
+(s>=1&&s<=8)?(ts=(s*100)+(s*(100*50)/100)):(ts+=(s*100)+((s-8)*15)+(s*(100*50)/100));
+
+(m>=0&&m<=8)?(ts+=m*100):(ts+=(m*100)+((m-8)*15));
+
+(t>=0&&t<=8)?(ts+=t*100):(ts+=(t*100)+((t-8)*15));
+
+(w>=0&&w<=8)?(ts+=w*100):(ts+=(w*100)+((w-8)*15));
+
+(th>=0&&th<=8)?(ts+=th*100):(ts+=(th*100)+((th-8)*15));
+
+(f>=0&&f<=8)?(ts+=f*100):(ts+=(f*100)+((f-8)*15));
+
+if(sat==0)
+
+ts+=0;
+
+else
+
+(sat>=1&&sat<=8)?(ts+=(sat*100)+((100*25)/100)):(ts+=(sat*100)+((sat-8)*15)+(sat*(100*25)/100));
+
+tt=s+m+t+w+th+f+sat;
+
+if(tt>40)
+
+ts+=((tt-40)*25);
+
+cout<<ts;
+
+return 0;
+
+}
