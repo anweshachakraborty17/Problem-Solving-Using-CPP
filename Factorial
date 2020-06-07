@@ -1,0 +1,54 @@
+Factorial
+-------------------------
+
+Write a program to compute the factorial of a number using recursion.
+INPUT AND OUTPUT FORMAT:
+
+Input consists of an integer.
+
+Refer sample input and output for formatting specifications.
+
+SAMPLE INPUT & OUTPUT
+
+5
+
+The factorial of 5 is 120
+
+
+Answer:
+CODE in C++
+------------------------------
+
+#include<iostream>
+
+using namespace std;
+
+int factorial(int n);
+
+int main()
+
+{
+
+int n;
+
+std::cin>>n;
+
+std::cout << "The factorial of "<<n<< " is " <<factorial(n);
+
+return 0;
+
+}
+
+int factorial(int n)
+
+{
+
+if(n > 1)
+
+return n * factorial(n - 1);
+
+else
+
+return 1;
+
+}
