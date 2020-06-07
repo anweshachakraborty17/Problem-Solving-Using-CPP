@@ -1,0 +1,69 @@
+Series-V
+-------------------
+
+Write a program to generate the first 'n' terms of the following series 121, 225, 361,...
+INPUT & OUTPUT FORMAT:
+
+The input is an integer 'n' which denotes the number of terms to be printed in the series.
+
+Print the series and refer the sample output for formatting.
+
+SAMPLE INPUT:
+
+4
+
+SAMPLE OUTPUT:
+
+121 225 361 529
+
+
+Answer:
+CODE in C++
+---------------------
+
+#include<iostream>
+
+using namespace std;
+
+int main()
+
+{
+
+int a,b,n,i,c;
+
+cin>>n;
+
+a=121;
+
+b=11;
+
+if(n==1)
+
+{
+
+cout<<"121"<<" ";
+
+}
+
+else
+
+{
+
+cout<<"121"<<" ";
+
+for(i=2;i<=n;i++)
+
+{
+
+b=b+4;
+
+c=b*b;
+
+cout<<c<<" ";
+
+}
+
+}
+
+}
+
